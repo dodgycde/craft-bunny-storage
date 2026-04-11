@@ -1,0 +1,65 @@
+{% import '_includes/forms' as forms %}
+
+{{ forms.autosuggestField({
+    label: 'Storage Zone Name' | t('bunny-storage'),
+    instructions: 'The name of your Bunny.net storage zone' | t('bunny-storage'),
+    id: 'storageZoneName',
+    name: 'storageZoneName',
+    value: fs.storageZoneName,
+    suggestEnvVars: true,
+    required: true,
+    errors: fs.getErrors('storageZoneName'),
+}) }}
+
+{{ forms.autosuggestField({
+    label: 'Storage Password' | t('bunny-storage'),
+    instructions: 'The API Key for the storage zone' | t('bunny-storage'),
+    id: 'storagePassword',
+    name: 'storagePassword',
+    value: fs.storagePassword,
+    suggestEnvVars: true,
+    required: true,
+    errors: fs.getErrors('storagePassword'),
+}) }}
+
+{{ forms.selectField({
+    label: 'Storage Region' | t('bunny-storage'),
+    instructions: 'The primary region your storage zone is in' | t('bunny-storage'),
+    id: 'region',
+    name: 'region',
+    value: fs.region,
+    options: regions,
+    errors: fs.getErrors('region'),
+}) }}
+
+{{ forms.autosuggestField({
+    label: 'CDN URL' | t('bunny-storage'),
+    instructions: 'The base URL of your connected Pull Zone (CDN). Assets will be served from this URL. e.g. https://yourzone.b-cdn.net' | t('bunny-storage'),
+    id: 'cdnUrl',
+    name: 'cdnUrl',
+    value: fs.cdnUrl,
+    suggestEnvVars: true,
+    placeholder: 'https://yourzone.b-cdn.net',
+    errors: fs.getErrors('cdnUrl'),
+}) }}
+
+{{ forms.autosuggestField({
+    label: 'Subfolder' | t('bunny-storage'),
+    instructions: 'Optional subfolder to store assets in' | t('bunny-storage'),
+    id: 'subfolder',
+    name: 'subfolder',
+    value: fs.subfolder,
+    suggestEnvVars: true,
+    placeholder: 'path/to/subfolder',
+    errors: fs.getErrors('subfolder'),
+}) }}
+
+{{ forms.autosuggestField({
+    label: 'API Key' | t('bunny-storage'),
+    instructions: 'Your Bunny.net account-level API key (not storage password). This is used for auto-clearing CDN caches when needed' | t('bunny-storage'),
+    id: 'apiKey',
+    name: 'apiKey',
+    value: fs.apiKey,
+    suggestEnvVars: true,
+    errors: fs.getErrors('apiKey'),
+}) }}

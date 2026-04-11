@@ -1,0 +1,17 @@
+{
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true,
+    "useTabs": false,
+    "twigPrintWidth": 999,
+    "twigSingleQuote": false,
+    "twigAlwaysBreakObjects": false,
+    "twigMultiTags": [
+        "nav,endnav",
+        "switch,case,default,endswitch",
+        "ifchildren,endifchildren",
+        "cache,endcache",
+        "js,endjs"
+    ]
+}

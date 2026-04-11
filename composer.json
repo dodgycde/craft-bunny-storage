@@ -1,0 +1,41 @@
+{
+    "name": "brindly-dot-art/bunny-storage",
+    "description": "A bunny.net storage adapter for CraftCMS",
+    "type": "craft-plugin",
+    "license": "MIT",
+    "keywords": [
+        "bunny.net",
+        "cms",
+        "craftcms",
+        "flysystem",
+        "storage",
+        "yii2"
+    ],
+    "authors": [
+        {
+            "name": "Alex Brindly",
+            "homepage": "https://brindly.art"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "craftcms/cms": "^4.0|^5.0",
+        "craftcms/flysystem": "^1.0|^2.0",
+        "platformcommunity/flysystem-bunnycdn": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BrindlyDotArt\\BunnyStorage\\": "src/"
+        }
+    },
+    "extra": {
+        "handle": "bunny-storage",
+        "name": "Bunny Storage",
+        "developer": "Alex Brindly",
+        "developerUrl": "https://brindly.art",
+        "description": "A bunny.net storage adapter for CraftCMS",
+        "documentationUrl": "https://github.com/dodgycoffee/craft-bunny-storage",
+        "changelogUrl": "https://raw.githubusercontent.com/dodgycoffee/craft-bunny-storage/main/CHANGELOG.md",
+        "minVersionRequired": "4.0.0"
+    }
+}
