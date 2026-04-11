@@ -2,7 +2,7 @@
     "name": "brindly-dot-art/bunny-storage",
     "description": "A bunny.net storage adapter for CraftCMS",
     "type": "craft-plugin",
-    "license": "MIT",
+    "license": "proprietary",
     "keywords": [
         "bunny.net",
         "cms",
