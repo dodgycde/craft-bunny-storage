@@ -1,8 +1,8 @@
 <?php
 
-namespace BrindlyDotArt\BunnyStorage;
+namespace DodgyCode\BunnyStorage;
 
-use BrindlyDotArt\BunnyStorage\fs\BunnyFs;
+use DodgyCode\BunnyStorage\fs\BunnyFs;
 use Craft;
 use craft\events\RegisterComponentTypesEvent;
 use craft\services\Fs;

@@ -1,11 +1,11 @@
 <?php
 
-namespace BrindlyDotArt\BunnyStorage\fs;
+namespace DodgyCode\BunnyStorage\fs;
 
 use Craft;
 use craft\flysystem\base\FlysystemFs;
 use craft\helpers\App;
-use BrindlyDotArt\BunnyStorage\helpers\Logger;
+use DodgyCode\BunnyStorage\helpers\Logger;
 use League\Flysystem\FilesystemAdapter;
 use PlatformCommunity\Flysystem\BunnyCDN\BunnyCDNAdapter;
 use PlatformCommunity\Flysystem\BunnyCDN\BunnyCDNClient;

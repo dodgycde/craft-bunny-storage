@@ -1,6 +1,6 @@
 <?php
 
-namespace BrindlyDotArt\BunnyStorage\helpers;
+namespace DodgyCode\BunnyStorage\helpers;
 
 use Craft;
 

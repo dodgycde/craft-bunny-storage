@@ -1,5 +1,5 @@
 {
-    "name": "brindly-dot-art/bunny-storage",
+    "name": "dodgycde/bunny-storage",
     "description": "A bunny.net storage adapter for CraftCMS",
     "type": "craft-plugin",
     "license": "proprietary",
@@ -25,17 +25,17 @@
     },
     "autoload": {
         "psr-4": {
-            "BrindlyDotArt\\BunnyStorage\\": "src/"
+            "DodgyCode\\BunnyStorage\\": "src/"
         }
     },
     "extra": {
         "handle": "bunny-storage",
         "name": "Bunny Storage",
-        "developer": "Alex Brindly",
-        "developerUrl": "https://brindly.art",
+        "developer": "Dodgy Code",
+        "developerUrl": "https://dodgyco.de/",
         "description": "A bunny.net storage adapter for CraftCMS",
-        "documentationUrl": "https://github.com/dodgycoffee/craft-bunny-storage",
-        "changelogUrl": "https://raw.githubusercontent.com/dodgycoffee/craft-bunny-storage/main/CHANGELOG.md",
+        "documentationUrl": "https://github.com/dodgycde/craft-bunny-storage",
+        "changelogUrl": "https://raw.githubusercontent.com/dodgycde/craft-bunny-storage/main/CHANGELOG.md",
         "minVersionRequired": "4.0.0"
     }
 }
