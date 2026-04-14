@@ -1,6 +1,6 @@
 {
     "name": "dodgycode/craft-bunny-storage",
-    "description": "A bunny.net storage adapter for CraftCMS",
+    "description": "A bunny.net storage adapter for Craft CMS",
     "type": "craft-plugin",
     "license": "proprietary",
     "keywords": [
