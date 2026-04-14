@@ -7,6 +7,8 @@ This plugin allows you to use bunny.net Storage as your filesystem for storing a
 ## Requirements
 This plugin requires Craft CMS 4.0.0+ or 5.0.0+.
 
+&nbsp;
+
 ## Installation
 You can install this plugin from the Plugin Store or by using Composer.
 
@@ -27,11 +29,6 @@ composer require dodgycode/craft-bunny-storage
 ./craft plugin/install craft-bunny-storage
 ```
 
-## Usage
-To create a new asset filesystem on a Craft CMS project using Bunny Storage, go to **Settings** → **Filesystems**, create a new filesystem, and set the Filesystem Type setting to “Bunny Storage”. When configuring your filesystem, make sure you use ENV variables, since some of the settings contain secrets that should not be exposed through the generated project config files that result from entering data into these fields directly. Safety First!
-
-> Note: If using Bunny CDN, the Base URL for assets should be your CDN url ("BUNNY_CDN" in the following ENV information)
-
 ### ENV File Values
 In your project's ENV file, you should define the following, using your bunny.net account information:
 
@@ -51,3 +48,18 @@ BUNNY_API=
 ```
 
 To find this information, log in to your Bunny dashboard and go to **Storage**. To access your files via CDN, connect your storage zone to a pull zone. For more setup information, please reference the Bunny Storage [Quickstart Guide](https://docs.bunny.net/storage/quickstart).
+
+&nbsp;
+
+## Usage
+To create a new asset filesystem on a Craft CMS project using Bunny Storage, go to **Settings** → **Filesystems**, create a new filesystem, and set the Filesystem Type setting to “Bunny Storage”. When configuring your filesystem, make sure you use ENV variables, since some of the settings contain secrets that should not be exposed through the generated project config files that result from entering data into these fields directly. Safety First!
+
+> Note: If using Bunny CDN, the Base URL for assets should be your CDN url
+
+&nbsp;
+
+## License & Support
+This is a paid plugin offered by [Dodgy Code](https://dodgyco.de) through the Craft CMS plugin marketplace. Please log any issues under **Issues** on [GitHub](https://github.com/dodgycde/craft-bunny-storage/issues). Thank You!
+
+
+
