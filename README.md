@@ -21,7 +21,7 @@ Open your terminal and run the following commands:
 cd /path/to/my-project.test
 
 # tell Composer to load the plugin
-composer require dodgycde/craft-bunny-storage
+composer require dodgycode/craft-bunny-storage
 
 # tell Craft to install the plugin
 ./craft plugin/install craft-bunny-storage
@@ -49,5 +49,5 @@ BUNNY_CDN='https://your-pull-zone.b-cdn.net'
 # Your account level API key. Used for clearing caches automatically
 BUNNY_API=
 ```
-To find this information, log in to your Bunny dashboard and go to **Storage**. To access your files via CDN, connect your storage zone to a pull zone. For more setup information, please reference the Bunny Storage [Quickstart Guide](https://docs.bunny.net/storage/quickstart).
 
+To find this information, log in to your Bunny dashboard and go to **Storage**. To access your files via CDN, connect your storage zone to a pull zone. For more setup information, please reference the Bunny Storage [Quickstart Guide](https://docs.bunny.net/storage/quickstart).
