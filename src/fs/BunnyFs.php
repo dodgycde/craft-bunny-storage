@@ -7,6 +7,7 @@ use craft\flysystem\base\FlysystemFs;
 use craft\helpers\App;
 use DodgyCode\BunnyStorage\helpers\Logger;
 use League\Flysystem\FilesystemAdapter;
+use League\Flysystem\PathPrefixing\PathPrefixedAdapter;
 use PlatformCommunity\Flysystem\BunnyCDN\BunnyCDNAdapter;
 use PlatformCommunity\Flysystem\BunnyCDN\BunnyCDNClient;
 use PlatformCommunity\Flysystem\BunnyCDN\BunnyCDNRegion;
@@ -95,8 +96,8 @@ class BunnyFs extends FlysystemFs
         }
 
         $baseUrl = $this->cdnUrl !== ''
-            ? rtrim(Craft::parseEnv($this->cdnUrl), '/')
-            : 'https://' . Craft::parseEnv($this->storageZoneName) . '.b-cdn.net';
+            ? rtrim(App::parseEnv($this->cdnUrl), '/')
+            : 'https://' . App::parseEnv($this->storageZoneName) . '.b-cdn.net';
 
         $subfolder = $this->getParsedSubfolder();
 
@@ -115,7 +116,7 @@ class BunnyFs extends FlysystemFs
      */
     public function invalidateCdnPath(string $path): bool
     {
-        $apiKey = Craft::parseEnv($this->apiKey);
+        $apiKey = App::parseEnv($this->apiKey);
 
         if ($apiKey === '') {
             Logger::cdnPurgeSkippedNoApiKey();
@@ -158,45 +159,20 @@ class BunnyFs extends FlysystemFs
             ? $this->region
             : (App::env('BUNNY_REGION') ?? BunnyCDNRegion::DEFAULT);
 
-        $client = new BunnyCDNClient(
-            Craft::parseEnv($this->storageZoneName),
-            Craft::parseEnv($this->storagePassword),
-            $region,
+        $adapter = new BunnyCDNAdapter(
+            new BunnyCDNClient(
+                App::parseEnv($this->storageZoneName),
+                App::parseEnv($this->storagePassword),
+                $region,
+            ),
+            App::parseEnv($this->cdnUrl),
         );
 
-        $cdnUrl = $this->cdnUrl !== ''
-            ? Craft::parseEnv($this->cdnUrl)
-            : '';
-
-        return new BunnyCDNAdapter($client, $cdnUrl);
-    }
-
-    // -------------------------------------------------------------------------
-    // Subfolder stuff
-    // -------------------------------------------------------------------------
-
-    protected function addPathPrefix(string $path): string
-    {
         $subfolder = $this->getParsedSubfolder();
 
         return $subfolder !== ''
-            ? $subfolder . '/' . ltrim($path, '/')
-            : $path;
-    }
-
-    protected function removePathPrefix(string $path): string
-    {
-        $subfolder = $this->getParsedSubfolder();
-
-        if ($subfolder === '') {
-            return $path;
-        }
-
-        $prefix = $subfolder . '/';
-
-        return str_starts_with($path, $prefix)
-            ? substr($path, strlen($prefix))
-            : $path;
+            ? new PathPrefixedAdapter($adapter, $subfolder)
+            : $adapter;
     }
 
     // -------------------------------------------------------------------------
@@ -205,7 +181,8 @@ class BunnyFs extends FlysystemFs
 
     protected function getParsedSubfolder(): string
     {
-        return trim(Craft::parseEnv($this->subfolder), '/');
+        static $subfolder = null;
+        return $subfolder ??= trim(App::parseEnv($this->subfolder), '/');
     }
 
     protected function getRegionOptions(): array
