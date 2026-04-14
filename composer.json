@@ -1,12 +1,14 @@
 {
-    "name": "dodgycde/bunny-storage",
+    "name": "dodgycode/craft-bunny-storage",
     "description": "A bunny.net storage adapter for CraftCMS",
     "type": "craft-plugin",
     "license": "proprietary",
     "keywords": [
         "bunny.net",
+        "craft",
         "cms",
         "craftcms",
+        "craft-plugin",
         "flysystem",
         "storage",
         "yii2"
@@ -28,14 +30,18 @@
             "DodgyCode\\BunnyStorage\\": "src/"
         }
     },
+    "support": {
+        "docs": "https://github.com/dodgycde/craft-bunny-storage",
+        "source": "https://github.com/dodgycde/craft-bunny-storage",
+        "issues": "https://github.com/dodgycde/craft-bunny-storage/issues"
+    },
     "extra": {
         "handle": "bunny-storage",
         "name": "Bunny Storage",
+        "description": "A bunny.net storage adapter for CraftCMS",
         "developer": "Dodgy Code",
         "developerUrl": "https://dodgyco.de/",
-        "description": "A bunny.net storage adapter for CraftCMS",
         "documentationUrl": "https://github.com/dodgycde/craft-bunny-storage",
-        "changelogUrl": "https://raw.githubusercontent.com/dodgycde/craft-bunny-storage/main/CHANGELOG.md",
-        "minVersionRequired": "4.0.0"
+        "changelogUrl": "https://raw.githubusercontent.com/dodgycde/craft-bunny-storage/main/CHANGELOG.md"
     }
 }
